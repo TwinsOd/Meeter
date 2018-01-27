@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1060800434622",
+    "firebase_url": "https://meeter-b58ce.firebaseio.com",
+    "project_id": "meeter-b58ce",
+    "storage_bucket": "meeter-b58ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060800434622:android:f68e8131d04431a8",
+        "android_client_info": {
+          "package_name": "com.example.twins.meeter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060800434622-16g3kslll1d9sedmv8aco6lkikep3cg0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.twins.meeter",
+            "certificate_hash": "0e5a533bae1aeeeafff9544925239e65e5d0529b"
+          }
+        },
+        {
+          "client_id": "1060800434622-4nvkkokm26bbjhaub0v02q5llvuaf3id.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfsrBGM9Wlf8Ly71-PLB4KC2_q9Vg2z74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060800434622-4nvkkokm26bbjhaub0v02q5llvuaf3id.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
