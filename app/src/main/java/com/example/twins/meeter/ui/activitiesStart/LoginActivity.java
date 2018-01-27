@@ -1,4 +1,4 @@
-package com.example.twins.meeter.ui.activities;
+package com.example.twins.meeter.ui.activitiesStart;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.twins.meeter.R;
 import com.example.twins.meeter.data.utils.NetworkUtils;
-import com.example.twins.meeter.ui.MainActivity;
+import com.example.twins.meeter.ui.activityMain.MainActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
