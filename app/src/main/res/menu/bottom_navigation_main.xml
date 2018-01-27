@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:icon="@drawable/ic_star"
+        app:showAsAction="ifRoom"
+        android:title="Favorite" />
+    <item
+        android:id="@+id/action_likes"
+        android:enabled="true"
+        android:icon="@drawable/ic_logo_menu"
+        app:showAsAction="ifRoom"
+        android:title="@string/app_name" />
+    <item
+        android:id="@+id/action_setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="ifRoom"
+        android:title="Account" />
+</menu>
