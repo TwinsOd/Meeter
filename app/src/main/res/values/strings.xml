@@ -3,15 +3,11 @@
     <string name="facebook_app_id">446863549045086</string>
     <string name="fb_login_protocol_scheme">fb446863549045086</string>
 
-    <!--<string name="title_activity_splash">SplashActivity</string>-->
-    <!--<string name="title_activity_main">MainActivity</string>-->
-
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_google">Login with Google +</string>
+
     <string name="favorite">Favorite</string>
     <string name="feed">Feed</string>
     <string name="settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account">Account</string>
 </resources>
