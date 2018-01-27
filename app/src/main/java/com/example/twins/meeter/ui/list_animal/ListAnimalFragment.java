@@ -10,17 +10,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.twins.meeter.App;
+import com.example.twins.meeter.Constants;
 import com.example.twins.meeter.R;
+import com.example.twins.meeter.data.callback.DataCallback;
 import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.activityMain.ListAnimalListener;
 
+import java.lang.reflect.Type;
 import java.util.List;
+
+import static bolts.AppLinkNavigation.NavigationResult.APP;
+import static com.example.twins.meeter.Constants.ALL_ANIMAL;
+import static com.example.twins.meeter.Constants.CAT_ANIMAL;
+import static com.example.twins.meeter.Constants.DOG_ANIMAL;
 
 
 public class ListAnimalFragment extends Fragment {
 
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
+    private static final String TYPE = "type_animal";
+    private int type = ALL_ANIMAL;
     private List<AnimalModel> animalModelList;
     private ListAnimalListener mListener;
 
@@ -29,10 +38,10 @@ public class ListAnimalFragment extends Fragment {
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static ListAnimalFragment newInstance(int columnCount) {
+    public static ListAnimalFragment newInstance(int type) {
         ListAnimalFragment fragment = new ListAnimalFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putInt(TYPE, type);
         fragment.setArguments(args);
         return fragment;
     }
@@ -42,7 +51,7 @@ public class ListAnimalFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            type = getArguments().getInt(TYPE);
         }
     }
 
@@ -54,13 +63,37 @@ public class ListAnimalFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+            final RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//          recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+            DataCallback<List<AnimalModel>> callback = new DataCallback<List<AnimalModel>>() {
+                @Override
+                public void onEmit(List<AnimalModel> data) {
+                    recyclerView.setAdapter(new AnimalRecyclerViewAdapter(data, mListener));
+                }
+
+                @Override
+                public void onCompleted() {
+
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+
+                }
+            };
+            switch (type){
+                case ALL_ANIMAL:
+                    App.getRepository().getAllAnimals(callback);
+                    break;
+                case CAT_ANIMAL:
+                    App.getRepository().getCatAnimals(callback);
+                    break;
+                case DOG_ANIMAL:
+                    App.getRepository().getDogAnimals(callback);
+                    break;
+
             }
-            recyclerView.setAdapter(new AnimalRecyclerViewAdapter(animalModelList, mListener));
         }
         return view;
     }

@@ -12,13 +12,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.twins.meeter.R;
+import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.account.AccountFragment;
 import com.example.twins.meeter.ui.favorites.FavoritesFragment;
 import com.example.twins.meeter.ui.feed.FeedFragment;
 import com.example.twins.meeter.ui.settings.SettingsFragment;
 import com.facebook.FacebookSdk;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ListAnimalListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-//      Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//      startActivity(intent);
-
         final TextView titleView = findViewById(R.id.title_tool_bar);
-        titleView.setText(R.string.favorite);
-        onShowFragment(FavoritesFragment.newInstance(), false);
         (findViewById(R.id.avatar_view)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 onShowFragment(AccountFragment.newInstance(), true);
             }
         });
+        final ListAnimalListener listAnimalListener = this;
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -51,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.action_feed:
                                 titleView.setText(R.string.feed);
-                                onShowFragment(FeedFragment.newInstance(), false);
+                                FeedFragment feedFragment = FeedFragment.newInstance();
+                                feedFragment.setListener(listAnimalListener);
+                                onShowFragment(feedFragment, false);
                                 break;
                             case R.id.action_setting:
                                 titleView.setText(R.string.settings);
@@ -61,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+        bottomNavigationView.setSelectedItemId(R.id.action_feed);
     }
 
     public void onShowFragment(Fragment fragment, boolean addStack) {
@@ -74,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.addToBackStack(fragment.toString());
         }
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onClickAnimal(AnimalModel animalModel) {
+
     }
 }

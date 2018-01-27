@@ -5,18 +5,18 @@
         android:id="@+id/action_favorites"
         android:enabled="true"
         android:icon="@drawable/ic_star"
-        android:title="Favorite"
+        android:title="@string/favorite"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_feed"
         android:enabled="true"
         android:icon="@drawable/ic_logo_menu"
-        android:title="@string/app_name"
+        android:title="@string/feed"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_setting"
         android:enabled="true"
         android:icon="@drawable/ic_settings"
-        android:title="Setting"
+        android:title="@string/settings"
         app:showAsAction="ifRoom" />
 </menu>
