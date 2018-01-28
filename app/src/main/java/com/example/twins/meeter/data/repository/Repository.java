@@ -21,4 +21,8 @@ public interface Repository {
     void getOutbox(DataCallback<List<AnimalModel>> callback);
 
     void getJoint(DataCallback<List<AnimalModel>> callback);
+
+    void setAnimalModel(AnimalModel animalModel);
+
+    AnimalModel getAnimalModel();
 }

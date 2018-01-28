@@ -1,5 +1,6 @@
 package com.example.twins.meeter.ui.activityMain;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,11 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.twins.meeter.App;
 import com.example.twins.meeter.R;
 import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.account.AccountFragment;
 import com.example.twins.meeter.ui.favorites.FavoritesFragment;
 import com.example.twins.meeter.ui.feed.FeedFragment;
+import com.example.twins.meeter.ui.profileAnimal.ProfileAnimalActivity;
 import com.example.twins.meeter.ui.settings.SettingsFragment;
 import com.facebook.FacebookSdk;
 
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
 
     @Override
     public void onClickAnimal(AnimalModel animalModel) {
-
+        App.getRepository().setAnimalModel(animalModel);
+        Intent intent = new Intent(this, ProfileAnimalActivity.class);
+        startActivity(intent);
     }
 }

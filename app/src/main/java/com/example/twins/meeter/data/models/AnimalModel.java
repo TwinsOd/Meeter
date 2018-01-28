@@ -16,7 +16,7 @@ public class AnimalModel {
     private String age;
     private String breeding;
     private String status;
-    private List<String> listSertification;
+    private List<String> listCertification;
     private String phone;
     private int image;
 
@@ -84,12 +84,12 @@ public class AnimalModel {
         this.status = status;
     }
 
-    public List<String> getListSertification() {
-        return listSertification;
+    public List<String> getListCertification() {
+        return listCertification;
     }
 
-    public void setListSertification(List<String> listSertification) {
-        this.listSertification = listSertification;
+    public void setListCertification(List<String> listCertification) {
+        this.listCertification = listCertification;
     }
 
     public String getPhone() {

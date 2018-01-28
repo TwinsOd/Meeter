@@ -19,8 +19,9 @@ import static com.example.twins.meeter.Constants.DOG;
  */
 
 public class RepositoryImpl implements Repository {
-    private Context context;
     private List<AnimalModel> listModelAnim = getList();
+    private AnimalModel animalModel;
+    private Context context;
 
     public RepositoryImpl(@NonNull Context context) {
         this.context = context;
@@ -142,6 +143,16 @@ public class RepositoryImpl implements Repository {
         list.add(listModelAnim.get(1));
         callback.onEmit(list);
         callback.onCompleted();
+    }
+
+    @Override
+    public void setAnimalModel(AnimalModel animalModel) {
+        this.animalModel = animalModel;
+    }
+
+    @Override
+    public AnimalModel getAnimalModel() {
+        return animalModel;
     }
 
     private List<AnimalModel> getList() {
