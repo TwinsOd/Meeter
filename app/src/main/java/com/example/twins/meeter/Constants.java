@@ -20,4 +20,8 @@ public class Constants {
     public final static int INBOX = 4;
     public final static int OUTBOX = 5;
     public final static int JOINT = 6;
+
+    //
+    public final static int CAT = 1;
+    public final static int DOG = 2;
 }

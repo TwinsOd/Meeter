@@ -4,8 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.twins.meeter.R;
 import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.activityMain.ListAnimalListener;
@@ -35,6 +37,10 @@ public class AnimalRecyclerViewAdapter extends RecyclerView.Adapter<AnimalRecycl
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).getNickName());
         holder.mContentView.setText(mValues.get(position).getType());
+        Glide
+                .with(holder.mView.getContext())
+                .load(mValues.get(position).getImage())
+                .into(holder.background);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +63,7 @@ public class AnimalRecyclerViewAdapter extends RecyclerView.Adapter<AnimalRecycl
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
+        public final ImageView background;
         public AnimalModel mItem;
 
         public ViewHolder(View view) {
@@ -64,6 +71,7 @@ public class AnimalRecyclerViewAdapter extends RecyclerView.Adapter<AnimalRecycl
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.id);
             mContentView = (TextView) view.findViewById(R.id.content);
+            background = view.findViewById(R.id.background_image);
         }
 
         @Override

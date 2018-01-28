@@ -8,6 +8,7 @@ import java.util.List;
 
 public class AnimalModel {
     private String nickName;
+    private int animal;
     private String type;
     private String price;
     private String sex;
@@ -17,6 +18,7 @@ public class AnimalModel {
     private String status;
     private List<String> listSertification;
     private String phone;
+    private int image;
 
     public String getNickName() {
         return nickName;
@@ -96,5 +98,21 @@ public class AnimalModel {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public int getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(int animal) {
+        this.animal = animal;
     }
 }
