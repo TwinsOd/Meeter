@@ -12,11 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.twins.meeter.App;
 import com.example.twins.meeter.R;
 import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.account.AccountFragment;
+import com.example.twins.meeter.ui.activitiesStart.LoginActivity;
 import com.example.twins.meeter.ui.favorites.FavoritesFragment;
 import com.example.twins.meeter.ui.feed.FeedFragment;
 import com.example.twins.meeter.ui.filter.FilterDialogFragment;
@@ -94,25 +96,21 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.avatar_view:
-                titleView.setText(R.string.account);
-                onShowFragment(AccountFragment.newInstance(), true);
+//                titleView.setText(R.string.account);
+//                onShowFragment(AccountFragment.newInstance(), true);
 //                filterView.setVisibility(View.GONE);
+//                Toast.makeText(this, "В стадии разработки", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.filter_view:
-                FilterDialogFragment filterDialogFragment = FilterDialogFragment.newInstance();
-//                filterDialogFragment.setTargetFragment(this, STATISTICS_DIALOG);
-                filterDialogFragment.show(getSupportFragmentManager(), "filter_list");
+                onShowFragment(FilterDialogFragment.newInstance(), true);
+                titleView.setText("Фильтры");
                 break;
         }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == STATISTICS_DIALOG) {
-//            getLogs();
-//        } else
-            super.onActivityResult(requestCode, resultCode, data);
-    }
+
 }

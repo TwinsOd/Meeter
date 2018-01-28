@@ -32,7 +32,7 @@ public class SettingsFragment extends Fragment {
                 .apply(RequestOptions.circleCropTransform())
                 .into(anim_1);
 
-        ImageView anim_2 = view.findViewById(R.id.anim_1);
+        ImageView anim_2 = view.findViewById(R.id.anim_2);
         Glide.with(getContext())
                 .load(R.drawable.dog_2)
                 .apply(RequestOptions.circleCropTransform())

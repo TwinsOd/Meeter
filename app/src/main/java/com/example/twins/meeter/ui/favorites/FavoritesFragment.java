@@ -30,7 +30,7 @@ public class FavoritesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favorites, container, false);
         ViewPager viewPager = view.findViewById(R.id.view_pager_favorites);
-        FavoritesPagerAdapter adapter = new FavoritesPagerAdapter(getContext(), getFragmentManager(), listAnimalListener);
+        FavoritesPagerAdapter adapter = new FavoritesPagerAdapter(getContext(), getChildFragmentManager(), listAnimalListener);
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = view.findViewById(R.id.tab_layout_favorites);
         tabLayout.setupWithViewPager(viewPager);

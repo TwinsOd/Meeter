@@ -34,7 +34,7 @@ public class FeedFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
         ViewPager viewPager = view.findViewById(R.id.view_pager_feed);
-        FeedPagerAdapter adapter = new FeedPagerAdapter(getContext(), getFragmentManager(), listAnimalListener);
+        FeedPagerAdapter adapter = new FeedPagerAdapter(getContext(), getChildFragmentManager(), listAnimalListener);
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = view.findViewById(R.id.tab_layout_feed);
         tabLayout.setupWithViewPager(viewPager);

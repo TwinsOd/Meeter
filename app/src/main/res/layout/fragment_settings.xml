@@ -9,38 +9,40 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#97adca"
+        android:background="#9f97adca"
         android:padding="8dp"
-        android:textColor="@android:color/black"
-        android:text="Владелец" />
+        android:text="Владелец"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:text="Иван Петрович"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="ivan@gmail.com"/>
+        android:text="Иван Петрович" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="+3(093)123-45-67"/>
+        android:text="ivan@gmail.com" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="+3(093)123-45-67" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F7F7F7"
+        android:layout_marginTop="4dp"
+        android:background="#9f97adca"
         android:padding="8dp"
-        android:textColor="@android:color/black"
-        android:text="Животные" />
+        android:text="Животные"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,23 +53,25 @@
             android:id="@+id/anim_1"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginStart="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="Спартак"
-            android:layout_gravity="center_vertical"/>
+            android:text="Спартак" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_marginEnd="32dp"/>
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_arrow_right" />
     </LinearLayout>
 
     <View style="@style/line" />
@@ -81,27 +85,47 @@
             android:id="@+id/anim_2"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginStart="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="Тоди"
-            android:layout_gravity="center_vertical"/>
+            android:text="Тоди" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_marginEnd="32dp"/>
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_arrow_right" />
     </LinearLayout>
 
     <View style="@style/line" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Добавить животного"
+        android:textColor="@color/colorAccent" />
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Выйти"
+        android:textColor="#0A5BFF"
+        android:textSize="12sp" />
 
 </LinearLayout>
