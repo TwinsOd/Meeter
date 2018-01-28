@@ -45,6 +45,7 @@
         android:textColor="@android:color/white" />
 
     <LinearLayout
+        android:id="@+id/anim_layout_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -77,6 +78,7 @@
     <View style="@style/line" />
 
     <LinearLayout
+        android:id="@+id/anim_layout_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

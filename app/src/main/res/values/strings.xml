@@ -6,17 +6,25 @@
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_google">Login with Google +</string>
 
-    <string name="favorite">Favorite</string>
-    <string name="feed">Feed</string>
-    <string name="settings">Settings</string>
-    <string name="account">Account</string>
-    <string name="all">All</string>
-    <string name="cat">Cat</string>
-    <string name="dog">Dog</string>
-    <string name="inbox">Inbox</string>
-    <string name="outbox">Outbox</string>
-    <string name="joint">Joint</string>
+    <!--<string name="favorite">Favorite</string>-->
+    <!--<string name="feed">Feed</string>-->
+    <!--<string name="settings">Settings</string>-->
+    <!--<string name="account">Account</string>-->
+    <!--<string name="all">All</string>-->
+    <!--<string name="cat">Cat</string>-->
+    <!--<string name="dog">Dog</string>-->
+    <!--<string name="inbox">Inbox</string>-->
+    <!--<string name="outbox">Outbox</string>-->
+    <!--<string name="joint">Joint</string>-->
+    <string name="favorite">Избраное</string>
+    <string name="feed">Лента</string>
+    <string name="settings">Настройки</string>
+    <string name="account">Аккаунт</string>
+    <string name="all">Все</string>
+    <string name="cat">Коты</string>
+    <string name="dog">Собаки</string>
+    <string name="inbox">Входящие</string>
+    <string name="outbox">Исходящие</string>
+    <string name="joint">Общие</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

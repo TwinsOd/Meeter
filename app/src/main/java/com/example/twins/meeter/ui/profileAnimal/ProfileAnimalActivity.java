@@ -50,7 +50,7 @@ private AnimalModel animalModel;
                 .with(this)
                 .load(animalModel.getImage())
                 .into(photo);
-
+        findViewById(R.id.back_view).setOnClickListener(this);
     }
 
     @Override
