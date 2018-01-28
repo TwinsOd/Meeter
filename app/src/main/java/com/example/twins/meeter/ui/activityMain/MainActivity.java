@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.twins.meeter.App;
@@ -18,11 +19,15 @@ import com.example.twins.meeter.data.models.AnimalModel;
 import com.example.twins.meeter.ui.account.AccountFragment;
 import com.example.twins.meeter.ui.favorites.FavoritesFragment;
 import com.example.twins.meeter.ui.feed.FeedFragment;
+import com.example.twins.meeter.ui.filter.FilterDialogFragment;
 import com.example.twins.meeter.ui.profileAnimal.ProfileAnimalActivity;
 import com.example.twins.meeter.ui.settings.SettingsFragment;
 import com.facebook.FacebookSdk;
 
-public class MainActivity extends AppCompatActivity implements ListAnimalListener {
+public class MainActivity extends AppCompatActivity implements ListAnimalListener, View.OnClickListener {
+
+    private TextView titleView;
+    private ImageView filterView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +35,10 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
         setContentView(R.layout.activity_main);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        final TextView titleView = findViewById(R.id.title_tool_bar);
-        (findViewById(R.id.avatar_view)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                titleView.setText(R.string.account);
-                onShowFragment(AccountFragment.newInstance(), true);
-            }
-        });
+        titleView = findViewById(R.id.title_tool_bar);
+        (findViewById(R.id.avatar_view)).setOnClickListener(this);
+        filterView = (findViewById(R.id.filter_view));
+        filterView.setOnClickListener(this);
         final ListAnimalListener listAnimalListener = this;
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
@@ -50,16 +51,19 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
                                 FavoritesFragment favoritesFragment = FavoritesFragment.newInstance();
                                 favoritesFragment.setListener(listAnimalListener);
                                 onShowFragment(favoritesFragment, false);
+                                filterView.setVisibility(View.GONE);
                                 break;
                             case R.id.action_feed:
                                 titleView.setText(R.string.feed);
                                 FeedFragment feedFragment = FeedFragment.newInstance();
                                 feedFragment.setListener(listAnimalListener);
                                 onShowFragment(feedFragment, false);
+                                filterView.setVisibility(View.VISIBLE);
                                 break;
                             case R.id.action_setting:
                                 titleView.setText(R.string.settings);
                                 onShowFragment(SettingsFragment.newInstance(), false);
+                                filterView.setVisibility(View.GONE);
                                 break;
                         }
                         return true;
@@ -86,5 +90,29 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
         App.getRepository().setAnimalModel(animalModel);
         Intent intent = new Intent(this, ProfileAnimalActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.avatar_view:
+                titleView.setText(R.string.account);
+                onShowFragment(AccountFragment.newInstance(), true);
+//                filterView.setVisibility(View.GONE);
+                break;
+            case R.id.filter_view:
+                FilterDialogFragment filterDialogFragment = FilterDialogFragment.newInstance();
+//                filterDialogFragment.setTargetFragment(this, STATISTICS_DIALOG);
+                filterDialogFragment.show(getSupportFragmentManager(), "filter_list");
+                break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == STATISTICS_DIALOG) {
+//            getLogs();
+//        } else
+            super.onActivityResult(requestCode, resultCode, data);
     }
 }

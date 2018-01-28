@@ -166,6 +166,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.cat_1);
             model.setSex("женский");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -176,7 +177,7 @@ public class RepositoryImpl implements Repository {
             model.setType("Бордер-терьер");
             model.setImage(R.drawable.dog_1);
             model.setSex("женский");
-            model.setCity("Одесса");
+            model.setCity("Киев");
             list.add(model);
         }
         if (true) {
@@ -187,7 +188,7 @@ public class RepositoryImpl implements Repository {
             model.setType("Корниш-рекс (Корнуэльский рекс) [CRX]");
             model.setImage(R.drawable.cat_2);
             model.setSex("женский");
-            model.setCity("Одесса");
+            model.setCity("Николаев");
             list.add(model);
         }
         if (true) {
@@ -199,6 +200,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.cat_3);
             model.setSex("Парень");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -220,7 +222,8 @@ public class RepositoryImpl implements Repository {
             model.setType("овчарка");
             model.setImage(R.drawable.dog_3);
             model.setSex("женский");
-            model.setCity("Одесса");
+            model.setCity("Запорожье");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -242,7 +245,8 @@ public class RepositoryImpl implements Repository {
             model.setType("Афганская борзая");
             model.setImage(R.drawable.dog_4);
             model.setSex("Парень");
-            model.setCity("Одесса");
+            model.setCity("Киев");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
 //double
@@ -266,6 +270,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.dog_1);
             model.setSex("женский");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -276,7 +281,7 @@ public class RepositoryImpl implements Repository {
             model.setType("Корниш-рекс (Корнуэльский рекс) [CRX]");
             model.setImage(R.drawable.cat_2);
             model.setSex("женский");
-            model.setCity("Одесса");
+            model.setCity("Киев");
             list.add(model);
         }
         if (true) {
@@ -288,6 +293,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.cat_3);
             model.setSex("Парень");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -310,6 +316,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.dog_3);
             model.setSex("женский");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
         if (true) {
@@ -332,6 +339,7 @@ public class RepositoryImpl implements Repository {
             model.setImage(R.drawable.dog_4);
             model.setSex("Парень");
             model.setCity("Одесса");
+            model.setPrice("Не интересвется потомством");
             list.add(model);
         }
 
