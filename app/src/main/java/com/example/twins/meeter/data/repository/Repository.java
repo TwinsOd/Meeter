@@ -15,4 +15,10 @@ public interface Repository {
     void getDogAnimals(DataCallback<List<AnimalModel>> callback);
 
     void getCatAnimals(DataCallback<List<AnimalModel>> callback);
+
+    void getInbox(DataCallback<List<AnimalModel>> callback);
+
+    void getOutbox(DataCallback<List<AnimalModel>> callback);
+
+    void getJoint(DataCallback<List<AnimalModel>> callback);
 }

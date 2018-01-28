@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements ListAnimalListene
                         switch (item.getItemId()) {
                             case R.id.action_favorites:
                                 titleView.setText(R.string.favorite);
-                                onShowFragment(FavoritesFragment.newInstance(), false);
+                                FavoritesFragment favoritesFragment = FavoritesFragment.newInstance();
+                                favoritesFragment.setListener(listAnimalListener);
+                                onShowFragment(favoritesFragment, false);
                                 break;
                             case R.id.action_feed:
                                 titleView.setText(R.string.feed);

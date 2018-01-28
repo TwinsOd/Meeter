@@ -24,6 +24,9 @@ import static bolts.AppLinkNavigation.NavigationResult.APP;
 import static com.example.twins.meeter.Constants.ALL_ANIMAL;
 import static com.example.twins.meeter.Constants.CAT_ANIMAL;
 import static com.example.twins.meeter.Constants.DOG_ANIMAL;
+import static com.example.twins.meeter.Constants.INBOX;
+import static com.example.twins.meeter.Constants.JOINT;
+import static com.example.twins.meeter.Constants.OUTBOX;
 
 
 public class ListAnimalFragment extends Fragment {
@@ -92,7 +95,15 @@ public class ListAnimalFragment extends Fragment {
                 case DOG_ANIMAL:
                     App.getRepository().getDogAnimals(callback);
                     break;
-
+                case INBOX:
+                    App.getRepository().getInbox(callback);
+                    break;
+                case OUTBOX:
+                    App.getRepository().getOutbox(callback);
+                    break;
+                case JOINT:
+                    App.getRepository().getJoint(callback);
+                    break;
             }
         }
         return view;

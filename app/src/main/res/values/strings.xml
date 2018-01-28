@@ -13,4 +13,7 @@
     <string name="all">All</string>
     <string name="cat">Cat</string>
     <string name="dog">Dog</string>
+    <string name="inbox">Inbox</string>
+    <string name="outbox">Outbox</string>
+    <string name="joint">Joint</string>
 </resources>

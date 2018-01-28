@@ -62,4 +62,46 @@ public class RepositoryImpl implements Repository {
         callback.onEmit(list);
         callback.onCompleted();
     }
+
+    @Override
+    public void getInbox(DataCallback<List<AnimalModel>> callback) {
+        List<AnimalModel> list = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            AnimalModel model = new AnimalModel();
+            model.setNickName("Inbox name " + (i +1));
+            model.setAge("" + (i+2)/2);
+            model.setType("Type test");
+            list.add(model);
+        }
+        callback.onEmit(list);
+        callback.onCompleted();
+    }
+
+    @Override
+    public void getOutbox(DataCallback<List<AnimalModel>> callback) {
+        List<AnimalModel> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            AnimalModel model = new AnimalModel();
+            model.setNickName("Outbox name " + (i +1));
+            model.setAge("" + (i+2)/2);
+            model.setType("Type test");
+            list.add(model);
+        }
+        callback.onEmit(list);
+        callback.onCompleted();
+    }
+
+    @Override
+    public void getJoint(DataCallback<List<AnimalModel>> callback) {
+        List<AnimalModel> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            AnimalModel model = new AnimalModel();
+            model.setNickName("Joint name " + (i +1));
+            model.setAge("" + (i+2)/2);
+            model.setType("Type test");
+            list.add(model);
+        }
+        callback.onEmit(list);
+        callback.onCompleted();
+    }
 }
